@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>List of previously completed tasks:</ion-title>
+    <ion-icon name ="close" slot ="end" size="large" (click)="dismiss()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card *ngFor="let item of completedList; let i = index">
+
+    <ion-card-content>{{item.itemName}}</ion-card-content>
+
+    <ion-card-content>
+      <ion-label>Due {{item.itemDueDate | date:'fullDate'}}</ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
